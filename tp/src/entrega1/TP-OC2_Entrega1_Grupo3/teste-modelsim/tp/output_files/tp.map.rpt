@@ -1,0 +1,631 @@
+Analysis & Synthesis report for tp
+Mon Oct 03 22:04:07 2016
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |tp|FSM2
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated
+ 14. Parameter Settings for User Entity Instance: mem_inst:mem_i|altsyncram:altsyncram_component
+ 15. altsyncram Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "mem_inst:mem_i"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Oct 03 22:04:07 2016       ;
+; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name                      ; tp                                          ;
+; Top-level Entity Name              ; tp                                          ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 8                                           ;
+;     Total combinational functions  ; 7                                           ;
+;     Dedicated logic registers      ; 5                                           ;
+; Total registers                    ; 5                                           ;
+; Total pins                         ; 24                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; tp                 ; tp                 ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                           ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
+; ../code/tp.v                     ; yes             ; User Verilog HDL File        ; C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v                 ;         ;
+; ../code/mem_inst.vhd             ; yes             ; User Wizard-Generated File   ; C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/mem_inst.vhd         ;         ;
+; ../code/displayDecoder.v         ; yes             ; User Verilog HDL File        ; C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/displayDecoder.v     ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/altsyncram.tdf                              ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/stratix_ram_block.inc                       ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/lpm_mux.inc                                 ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/lpm_decode.inc                              ;         ;
+; aglobal160.inc                   ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/aglobal160.inc                              ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/a_rdenreg.inc                               ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/altrom.inc                                  ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/altram.inc                                  ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; e:/quartus/quartus/libraries/megafunctions/altdpram.inc                                ;         ;
+; db/altsyncram_48s3.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 8      ;
+;                                             ;        ;
+; Total combinational functions               ; 7      ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 0      ;
+;     -- 3 input functions                    ; 0      ;
+;     -- <=2 input functions                  ; 7      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 7      ;
+;     -- arithmetic mode                      ; 0      ;
+;                                             ;        ;
+; Total registers                             ; 5      ;
+;     -- Dedicated logic registers            ; 5      ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 24     ;
+;                                             ;        ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+;                                             ;        ;
+; Maximum fan-out node                        ; FSM[1] ;
+; Maximum fan-out                             ; 6      ;
+; Total fan-out                               ; 54     ;
+; Average fan-out                             ; 0.90   ;
++---------------------------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                               ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+----------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Entity Name    ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+----------------+--------------+
+; |tp                        ; 7 (4)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 24   ; 0            ; |tp                      ; tp             ; work         ;
+;    |displayDecoder:DP7_1|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |tp|displayDecoder:DP7_1 ; displayDecoder ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |tp|FSM2                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
++-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+; Name                  ; FSM2.0000000000010010 ; FSM2.0000000000010001 ; FSM2.0000000000010000 ; FSM2.0000000000001111 ; FSM2.0000000000001110 ; FSM2.0000000000001101 ; FSM2.0000000000001100 ; FSM2.0000000000001011 ; FSM2.0000000000001010 ; FSM2.0000000000001001 ; FSM2.0000000000001000 ; FSM2.0000000000000111 ; FSM2.0000000000000110 ; FSM2.0000000000000101 ; FSM2.0000000000000100 ; FSM2.0000000000000011 ; FSM2.0000000000000010 ; FSM2.0000000000000001 ; FSM2.0000000000000000 ;
++-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+; FSM2.0000000000000000 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ;
+; FSM2.0000000000000001 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 1                     ;
+; FSM2.0000000000000010 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 1                     ;
+; FSM2.0000000000000011 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000000100 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000000101 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000000110 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000000111 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000001000 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000001001 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000001010 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000001011 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000001100 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000001101 ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000001110 ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000001111 ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000010000 ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000010001 ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; FSM2.0000000000010010 ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
++-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; registers[0][2]                        ; Stuck at GND due to stuck port data_in ;
+; registers[0][1]                        ; Stuck at GND due to stuck port data_in ;
+; registers[0][0]                        ; Stuck at GND due to stuck port data_in ;
+; FSM[2]                                 ; Stuck at GND due to stuck port data_in ;
+; FSM2~21                                ; Lost fanout                            ;
+; FSM2~22                                ; Lost fanout                            ;
+; FSM2~23                                ; Lost fanout                            ;
+; FSM2~24                                ; Lost fanout                            ;
+; FSM2~25                                ; Lost fanout                            ;
+; FSM2~26                                ; Lost fanout                            ;
+; FSM2~27                                ; Lost fanout                            ;
+; FSM2~28                                ; Lost fanout                            ;
+; FSM2~29                                ; Lost fanout                            ;
+; FSM2~30                                ; Lost fanout                            ;
+; FSM2~31                                ; Lost fanout                            ;
+; FSM2~32                                ; Lost fanout                            ;
+; FSM2~33                                ; Lost fanout                            ;
+; FSM2~34                                ; Lost fanout                            ;
+; FSM2~35                                ; Lost fanout                            ;
+; FSM2~36                                ; Lost fanout                            ;
+; instruction[0..5,26..31]               ; Lost fanout                            ;
+; pc[0..9]                               ; Lost fanout                            ;
+; FSM2.0000000000000000                  ; Lost fanout                            ;
+; FSM2.0000000000000001                  ; Lost fanout                            ;
+; FSM2.0000000000000010                  ; Lost fanout                            ;
+; FSM2.0000000000000011                  ; Lost fanout                            ;
+; FSM2.0000000000000100                  ; Lost fanout                            ;
+; FSM2.0000000000000101                  ; Lost fanout                            ;
+; FSM2.0000000000000110                  ; Lost fanout                            ;
+; FSM2.0000000000000111                  ; Lost fanout                            ;
+; FSM2.0000000000001000                  ; Lost fanout                            ;
+; FSM2.0000000000001001                  ; Lost fanout                            ;
+; FSM2.0000000000001010                  ; Lost fanout                            ;
+; FSM2.0000000000001011                  ; Lost fanout                            ;
+; FSM2.0000000000001100                  ; Lost fanout                            ;
+; FSM2.0000000000001101                  ; Lost fanout                            ;
+; FSM2.0000000000001110                  ; Lost fanout                            ;
+; FSM2.0000000000001111                  ; Lost fanout                            ;
+; FSM2.0000000000010000                  ; Lost fanout                            ;
+; FSM2.0000000000010001                  ; Lost fanout                            ;
+; FSM2.0000000000010010                  ; Lost fanout                            ;
+; clk[2..31]                             ; Lost fanout                            ;
+; Total Number of Removed Registers = 91 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                               ;
++----------------+--------------------+---------------------------------------------------------------------+
+; Register name  ; Reason for Removal ; Registers Removed due to This Register                              ;
++----------------+--------------------+---------------------------------------------------------------------+
+; instruction[4] ; Lost Fanouts       ; pc[0], pc[1], pc[2], pc[3], pc[4]                                   ;
+; FSM2~21        ; Lost Fanouts       ; FSM2.0000000000001101, FSM2.0000000000001111, FSM2.0000000000010001 ;
+; FSM2~22        ; Lost Fanouts       ; FSM2.0000000000001110, FSM2.0000000000010010                        ;
+; FSM2~25        ; Lost Fanouts       ; FSM2.0000000000010000                                               ;
++----------------+--------------------+---------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 5     ;
+; Number of registers using Synchronous Clear  ; 1     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |tp|instruction[2]         ;
+; 22:1               ; 18 bits   ; 252 LEs       ; 252 LEs              ; 0 LEs                  ; No         ; |tp|FSM2                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Source assignments for mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------+
+; Assignment                      ; Value              ; From ; To                                     ;
++---------------------------------+--------------------+------+----------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                      ;
++---------------------------------+--------------------+------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mem_inst:mem_i|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------+
+; Parameter Name                     ; Value                ; Type                            ;
++------------------------------------+----------------------+---------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                         ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                  ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                         ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                         ;
+; WIDTH_A                            ; 32                   ; Signed Integer                  ;
+; WIDTHAD_A                          ; 10                   ; Signed Integer                  ;
+; NUMWORDS_A                         ; 1024                 ; Signed Integer                  ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                         ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                         ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                         ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                         ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                         ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                         ;
+; WIDTH_B                            ; 1                    ; Signed Integer                  ;
+; WIDTHAD_B                          ; 1                    ; Signed Integer                  ;
+; NUMWORDS_B                         ; 0                    ; Signed Integer                  ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                         ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                         ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                         ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                         ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                         ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                         ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                         ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                         ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                         ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                         ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                         ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                  ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Signed Integer                  ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                         ;
+; BYTE_SIZE                          ; 8                    ; Signed Integer                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
+; INIT_FILE                          ; mem_inst.mif         ; Untyped                         ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                         ;
+; MAXIMUM_DEPTH                      ; 0                    ; Signed Integer                  ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                         ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                         ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                         ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                         ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Signed Integer                  ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                         ;
+; CBXI_PARAMETER                     ; altsyncram_48s3      ; Untyped                         ;
++------------------------------------+----------------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                           ;
++-------------------------------------------+------------------------------------------------+
+; Name                                      ; Value                                          ;
++-------------------------------------------+------------------------------------------------+
+; Number of entity instances                ; 1                                              ;
+; Entity Instance                           ; mem_inst:mem_i|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                            ;
+;     -- WIDTH_A                            ; 32                                             ;
+;     -- NUMWORDS_A                         ; 1024                                           ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                   ;
+;     -- WIDTH_B                            ; 1                                              ;
+;     -- NUMWORDS_B                         ; 0                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                      ;
++-------------------------------------------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mem_inst:mem_i"                                                                         ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; q[25..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 24                          ;
+; cycloneiii_ff         ; 5                           ;
+;     SCLR              ; 1                           ;
+;     plain             ; 4                           ;
+; cycloneiii_lcell_comb ; 10                          ;
+;     normal            ; 10                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 6                           ;
+;                       ;                             ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 0.81                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Mon Oct 03 22:03:57 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off tp -c tp
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/ronald/documents/dropbox/ufmg/oc2/tp/teste-modelsim/code/tp.v
+    Info (12023): Found entity 1: tp File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file /users/ronald/documents/dropbox/ufmg/oc2/tp/teste-modelsim/code/mem_inst.vhd
+    Info (12022): Found design unit 1: mem_inst-SYN File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/mem_inst.vhd Line: 53
+    Info (12023): Found entity 1: mem_inst File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/mem_inst.vhd Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file /users/ronald/documents/dropbox/ufmg/oc2/tp/teste-modelsim/code/displaydecoder.v
+    Info (12023): Found entity 1: displayDecoder File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/displayDecoder.v Line: 1
+Info (12127): Elaborating entity "tp" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at tp.v(20): object "Zero" assigned a value but never read File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 20
+Warning (10230): Verilog HDL assignment warning at tp.v(64): truncated value with size 32 to match size of target (10) File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 64
+Warning (10230): Verilog HDL assignment warning at tp.v(362): truncated value with size 32 to match size of target (10) File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 362
+Warning (10230): Verilog HDL assignment warning at tp.v(369): truncated value with size 32 to match size of target (10) File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 369
+Warning (10034): Output port "LEDG[8..1]" at tp.v(4) has no driver File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 4
+Info (12128): Elaborating entity "mem_inst" for hierarchy "mem_inst:mem_i" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 28
+Info (12128): Elaborating entity "altsyncram" for hierarchy "mem_inst:mem_i|altsyncram:altsyncram_component" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/mem_inst.vhd Line: 60
+Info (12130): Elaborated megafunction instantiation "mem_inst:mem_i|altsyncram:altsyncram_component" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/mem_inst.vhd Line: 60
+Info (12133): Instantiated megafunction "mem_inst:mem_i|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/mem_inst.vhd Line: 60
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK1"
+    Info (12134): Parameter "byte_size" = "8"
+    Info (12134): Parameter "byteena_aclr_a" = "UNUSED"
+    Info (12134): Parameter "byteena_aclr_b" = "NONE"
+    Info (12134): Parameter "byteena_reg_b" = "CLOCK1"
+    Info (12134): Parameter "clock_enable_core_a" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_core_b" = "USE_INPUT_CLKEN"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "NORMAL"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "NORMAL"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "ecc_pipeline_stage_enabled" = "FALSE"
+    Info (12134): Parameter "enable_ecc" = "FALSE"
+    Info (12134): Parameter "implement_in_les" = "OFF"
+    Info (12134): Parameter "indata_aclr_a" = "UNUSED"
+    Info (12134): Parameter "indata_aclr_b" = "NONE"
+    Info (12134): Parameter "indata_reg_b" = "CLOCK1"
+    Info (12134): Parameter "init_file" = "mem_inst.mif"
+    Info (12134): Parameter "init_file_layout" = "PORT_A"
+    Info (12134): Parameter "maximum_depth" = "0"
+    Info (12134): Parameter "numwords_a" = "1024"
+    Info (12134): Parameter "numwords_b" = "0"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "ram_block_type" = "AUTO"
+    Info (12134): Parameter "rdcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK1"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "read_during_write_mode_port_b" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "stratixiv_m144k_allow_dual_clocks" = "ON"
+    Info (12134): Parameter "width_a" = "32"
+    Info (12134): Parameter "width_b" = "1"
+    Info (12134): Parameter "width_byteena_a" = "1"
+    Info (12134): Parameter "width_byteena_b" = "1"
+    Info (12134): Parameter "width_eccstatus" = "3"
+    Info (12134): Parameter "widthad_a" = "10"
+    Info (12134): Parameter "widthad_b" = "1"
+    Info (12134): Parameter "wrcontrol_aclr_a" = "UNUSED"
+    Info (12134): Parameter "wrcontrol_aclr_b" = "NONE"
+    Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_48s3.tdf
+    Info (12023): Found entity 1: altsyncram_48s3 File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_48s3" for hierarchy "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated" File: e:/quartus/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "displayDecoder" for hierarchy "displayDecoder:DP7_0" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 30
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[6]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 167
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[7]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 189
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[8]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 211
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[9]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 233
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[10]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 255
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[11]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 277
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[12]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 299
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[13]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 321
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[14]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 343
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[15]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 365
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[16]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 387
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[17]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 409
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[18]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 431
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[19]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 453
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[20]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 475
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[21]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 497
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[22]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 519
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[23]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 541
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[24]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 563
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[25]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 585
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[4]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 123
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[3]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 101
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[2]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 79
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[1]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 57
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[0]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 35
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[5]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 145
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[31]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 717
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[30]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 695
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[29]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 673
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[28]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 651
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[27]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 629
+        Warning (14320): Synthesized away node "mem_inst:mem_i|altsyncram:altsyncram_component|altsyncram_48s3:auto_generated|q_a[26]" File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/tp/db/altsyncram_48s3.tdf Line: 607
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDG[1]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 4
+    Warning (13410): Pin "LEDG[2]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 4
+    Warning (13410): Pin "LEDG[3]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 4
+    Warning (13410): Pin "LEDG[4]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 4
+    Warning (13410): Pin "LEDG[5]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 4
+    Warning (13410): Pin "LEDG[6]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 4
+    Warning (13410): Pin "LEDG[7]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 4
+    Warning (13410): Pin "LEDG[8]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 4
+    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 5
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 5
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 5
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 5
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 5
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 5
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 5
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v Line: 7
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 87 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 32 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 23 output pins
+    Info (21061): Implemented 8 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
+    Info: Peak virtual memory: 867 megabytes
+    Info: Processing ended: Mon Oct 03 22:04:07 2016
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:22
+
+

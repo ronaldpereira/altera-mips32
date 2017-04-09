@@ -1,0 +1,123 @@
+# Reading E:/Quartus/modelsim_ase/tcl/vsim/pref.tcl
+# do tp_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying E:/Quartus/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code {C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 14:22:57 on Oct 23,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code" C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/tp.v 
+# -- Compiling module tp
+# 
+# Top level modules:
+# 	tp
+# End time: 14:22:57 on Oct 23,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code {C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/displayDecoder.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 14:22:58 on Oct 23,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code" C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/displayDecoder.v 
+# -- Compiling module displayDecoder
+# 
+# Top level modules:
+# 	displayDecoder
+# End time: 14:22:58 on Oct 23,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/mem_data.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 14:22:58 on Oct 23,2016
+# vcom -reportprogress 300 -93 -work work C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/mem_data.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mem_data
+# -- Compiling architecture SYN of mem_data
+# End time: 14:22:58 on Oct 23,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/mem_inst.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 14:22:58 on Oct 23,2016
+# vcom -reportprogress 300 -93 -work work C:/Users/Ronald/Documents/Dropbox/UFMG/OC2/tp/teste-modelsim/code/mem_inst.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity mem_inst
+# -- Compiling architecture SYN of mem_inst
+# End time: 14:22:58 on Oct 23,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.tp
+# vsim work.tp 
+# Start time: 14:23:01 on Oct 23,2016
+# Loading work.tp
+# Loading work.displayDecoder
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.mem_inst(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading work.mem_data(syn)
+add wave -position insertpoint  \
+sim:/tp/CLOCK_50 \
+sim:/tp/LEDG \
+sim:/tp/HEX0 \
+sim:/tp/HEX1 \
+sim:/tp/KEY \
+sim:/tp/clk \
+sim:/tp/FSM \
+sim:/tp/FSM2 \
+sim:/tp/i \
+sim:/tp/pc \
+sim:/tp/instruction \
+sim:/tp/registers \
+sim:/tp/aluOutput \
+sim:/tp/auxMem \
+sim:/tp/writeEnable \
+sim:/tp/Zero \
+sim:/tp/A \
+sim:/tp/B \
+sim:/tp/imm \
+sim:/tp/jmem \
+sim:/tp/out_mem_inst \
+sim:/tp/out_mem_data
+force -freeze sim:/tp/CLOCK_50 1 0, 0 {50 ps} -r 100
+run
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /tp/mem_i/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 3  Instance: /tp/mem_i/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /tp/mem_i/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 3  Instance: /tp/mem_i/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /tp/mem_i/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 3  Instance: /tp/mem_i/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /tp/mem_d/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 3  Instance: /tp/mem_d/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /tp/mem_d/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 3  Instance: /tp/mem_d/altsyncram_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 3  Instance: /tp/mem_d/altsyncram_component
+# ** Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+#    Time: 0 ps  Iteration: 3  Instance: /tp/mem_d/altsyncram_component
+# End time: 14:23:45 on Oct 23,2016, Elapsed time: 0:00:44
+# Errors: 0, Warnings: 12

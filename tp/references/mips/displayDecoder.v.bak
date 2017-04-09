@@ -1,0 +1,51 @@
+module displayDecoder(
+
+	input[6:0]		entrada,
+	input zero,
+	input last,
+	output reg [0:6]		saida
+);
+
+integer i;
+
+	always@(entrada) //sempre que mudar a entrada
+	begin
+		if(last == 1'b0) // Se NÃO for os os bits 28,29,30,31 do aluOutput
+		begin
+			saida[5] = ~(entrada[0]);
+			saida[0] = ~(entrada[1]);
+			saida[1] = ~(entrada[2]);			saida[2] = ~(entrada[3]);
+			saida[3] = ~(entrada[4]);
+			saida[4] = ~(entrada[5]);
+			saida[6] = ~(entrada[6]);
+		end
+		
+		else // Se for os os bits 28,29,30,31 do aluOutput
+		begin
+			saida[5] = ~(entrada[0]);
+			saida[0] = ~(entrada[1]);
+			saida[1] = ~(entrada[2]);
+			saida[2] = ~(entrada[3]);
+			saida[3] = ~(zero);
+			saida[4] = 1'b1;
+			saida[6] = 1'b1;
+		end
+	end
+    
+endmodule
+
+/*
+
+HEX 7 Schema:
+    0
+	___
+ 5|	| 1
+  | 6 |
+   ___
+ 4|	| 2
+  |	|
+	___
+    3
+
+
+*/

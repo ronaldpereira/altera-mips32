@@ -1,0 +1,11 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/Ronald/Downloads/tp/teste-quartus/code {C:/Users/Ronald/Downloads/tp/teste-quartus/code/tp.v}
+vlog -vlog01compat -work work +incdir+C:/Users/Ronald/Downloads/tp/teste-quartus/code {C:/Users/Ronald/Downloads/tp/teste-quartus/code/displayDecoder.v}
+vcom -93 -work work {C:/Users/Ronald/Downloads/tp/teste-quartus/code/mem_inst.vhd}
+

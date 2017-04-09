@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Oct 23 14:17:12 2016
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Revision Name : tp
+Top-level Entity Name : tp
+Family : Cyclone IV E
+Total logic elements : 4,514
+    Total combinational functions : 3,505
+    Dedicated logic registers : 1,246
+Total registers : 1246
+Total pins : 24
+Total virtual pins : 0
+Total memory bits : 65,536
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
